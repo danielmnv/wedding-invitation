@@ -3,7 +3,9 @@
 </script>
 
 <script>
+	import Headline from '$lib/Headline.svelte';
 	import Countdown from '$lib/Countdown.svelte';
+	import Event from '$lib/Event.svelte';
 </script>
 
 <svelte:head>
@@ -12,19 +14,11 @@
 </svelte:head>
 
 <section>
-	<!-- Names -->
-	<section class="container py-10 flex flex-col gap-y-7">
-		<div class="bg-red-300 text-center uppercase">
-			<p>¡Nos casamos!</p>
-		</div>
-		<div class="bg-blue-200 text-center">
-			<h1 class="handwriting text-7xl">Jhazzel</h1>
-			<h3 class="handwriting text-5xl">&</h3>
-			<h1 class="handwriting text-7xl">Edgar</h1>
-		</div>
-	</section>
+	<Headline />
 
 	<Countdown />
+
+	<Event />
 </section>
 
 <style>
