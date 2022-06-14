@@ -12,3 +12,35 @@
 .handwriting {
 	font-family: 'Sacramento', cursive;
 }
+
+svg {
+	@apply stroke-2;
+}
+
+@layer components {
+	.card {
+		@apply bg-white rounded-lg shadow-xl overflow-hidden;
+		.img {
+			@apply relative overflow-hidden;
+			img {
+				@apply hover:scale-125 transition-all duration-500;
+			}
+		}
+		.body {
+			@apply p-6 flex flex-col justify-around gap-6 items-center;
+			.title, { @apply text-4xl handwriting; }
+			.address { @apply text-center }
+			.time { @apply text-3xl handwriting }
+		}
+		.actions {
+			@apply flex justify-center pt-3 pb-7;
+		}
+	}
+
+	.button {
+		@apply
+			flex p-3 gap-x-3
+			bg-primary uppercase rounded-md text-white font-semibold
+			hover:bg-secondary transition-all duration-500;
+	}
+}

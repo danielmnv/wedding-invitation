@@ -3,9 +3,20 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '3rem'
+      screens: {
+        sm: '640px',
+        md: '690px',
+        lg: '728px',
+        xl: '984px',
+        '2xl': '1960px',
+      }
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#cdaf57',
+        secondary: '#00897B'
+      }
+    },
   },
   plugins: [],
 }
