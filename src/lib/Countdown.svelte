@@ -1,4 +1,5 @@
 <script>
+    import CountdownSection from '$lib/CountdownSection.svelte';
     import { onMount } from 'svelte';
 
     let time = {
@@ -19,10 +20,10 @@
             const hour = minute * 60;
             const day = hour * 24;
 
-            time.days = Math.floor(gap / day);
-            time.hours = Math.floor((gap % day) / hour);
-            time.minutes = Math.floor((gap % hour) / minute);
-            time.seconds = Math.floor((gap % minute) / second);
+            time.days = `${(Math.floor(gap / day))}`.padStart(2, '0');
+            time.hours = `${(Math.floor((gap % day) / hour))}`.padStart(2, '0');
+            time.minutes = `${(Math.floor((gap % hour) / minute))}`.padStart(2, '0');
+            time.seconds = `${(Math.floor((gap % minute) / second))}`.padStart(2, '0');
         };
 
         setInterval(() => countdown(), 1000);
@@ -30,5 +31,21 @@
 </script>
 
 <section>
-    <p>{time.days} {time.hours} {time.minutes} {time.seconds}</p>
+    <p class="text-center uppercase p-9 tracking-widest">Sólo faltan:</p>
+
+    <!-- Countdown -->
+    <div class="container bg-primary bg-opacity-85 flex flex-row px-28 rounded-md">
+        <div class="flex-1">
+            <CountdownSection number={time.days} unit="días" />
+        </div>
+        <div class="flex-1">
+            <CountdownSection number={time.hours} unit="hrs" />
+        </div>
+        <div class="flex-1">
+            <CountdownSection number={time.minutes} unit="min" />
+        </div>
+        <div class="flex-1">
+            <CountdownSection number={time.seconds} unit="seg" />
+        </div>
+    </div>
 </section>
