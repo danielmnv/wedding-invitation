@@ -3,7 +3,7 @@
 </script>
 <section>
     <!-- Names -->
-	<section class="container py-10 flex flex-col gap-y-7">
+	<section class="section container flex flex-col gap-y-7">
 		<div class="text-center uppercase">
             <Saos 
                 animation={"fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
@@ -25,7 +25,7 @@
 	</section>
 
     <!-- Date -->
-    <section class="container pt-9">
+    <section class="section container py-10">
         <div class="grid grid-cols-3">
             <!-- Day -->
             <div class="h-48 pr-0">

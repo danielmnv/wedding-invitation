@@ -8,7 +8,7 @@
     }
 </script>
 <section>
-    <p class="text-center text-5xl mt-2 mb-8 handwriting">{title}</p>
+    <p class="headline mb-8">{title}</p>
 
     <div class="card">
         <div class="img">

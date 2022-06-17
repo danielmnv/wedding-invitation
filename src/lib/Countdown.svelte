@@ -1,6 +1,6 @@
 <script>
     import Saos from 'saos';
-    import CountdownSection from '$lib/CountdownSection.svelte';
+    import CountdownSection from '$lib/components/CountdownSection.svelte';
     import { onMount } from 'svelte';
 
     let isStarting = false, time = {
@@ -47,8 +47,8 @@
     }
 </script>
 
-<section>
-    <p class="text-center uppercase p-9 tracking-widest">Sólo faltan:</p>
+<section class="section">
+    <p class="text-center uppercase pb-9 tracking-widest">Sólo faltan:</p>
 
     <!-- Countdown -->
     <div class="container bg-primary bg-opacity-85 px-8 md:px-28 sm:rounded-md">
@@ -73,5 +73,11 @@
                 {/if}
             </div>
         </Saos>
+    </div>
+
+    <div class="container">
+        <p class="text-center uppercase pt-9 tracking-wide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dolores? Repudiandae aperiam deserunt veniam eius deleniti similique molestiae? 
+        </p>
     </div>
 </section>

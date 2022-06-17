@@ -1,15 +1,9 @@
 <script>
-    import Place from '$lib/Place.svelte';
+    import Place from '$lib/components/Place.svelte';
 </script>
-<section>
-    <div class="container">
-        <p class="text-center uppercase p-9 tracking-wide">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dolores? Repudiandae aperiam deserunt veniam eius deleniti similique molestiae? 
-        </p>
-    </div>
-
+<section class="section">
     <!-- Places -->
-    <div class="container pt-9">
+    <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Church -->
             <Place
