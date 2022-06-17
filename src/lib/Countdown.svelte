@@ -48,12 +48,12 @@
 </script>
 
 <section class="section">
-    <p class="text-center uppercase pb-9 tracking-widest">Sólo faltan:</p>
+    <p class="text-center uppercase pb-9 tracking-widest {!isStarting ? 'visible' : 'invisible'}">Sólo faltan:</p>
 
     <!-- Countdown -->
     <div class="container bg-primary bg-opacity-85 px-8 md:px-28 sm:rounded-md">
         <Saos 
-            animation={"fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
+            animation={"fade-in 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
             once={true}
         >
             <div class="flex flex-row py-8 text-slate-50">

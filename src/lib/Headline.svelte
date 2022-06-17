@@ -1,17 +1,15 @@
 <script>
     import Saos from 'saos';
+    import Title from '$lib/components/Title.svelte';
 </script>
 <section>
     <!-- Names -->
 	<section class="section container flex flex-col gap-y-7">
-		<div class="text-center uppercase">
-            <Saos 
-                animation={"fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
-                once={true}
-            >
-                <p>¡Nos casamos!</p>
-            </Saos>
-		</div>
+        <Title duration={1}>
+            <div slot="custom">
+                <p class="text-center uppercase">¡Nos casamos!</p>
+            </div>
+        </Title>
 		<div class="text-center">
             <Saos 
                 animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}

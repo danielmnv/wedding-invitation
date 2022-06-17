@@ -1,5 +1,6 @@
 <script>
     import IconLocation from '$lib/icons/Location.svelte';
+    import Title from '$lib/components/Title.svelte';
 
     export let title, name, address, time, url;
 
@@ -8,9 +9,9 @@
     }
 </script>
 <section>
-    <p class="headline mb-8">{title}</p>
+    <Title text={title} />
 
-    <div class="card">
+    <div class="card mt-8">
         <div class="img">
             <img src="https://cdn0.bodas.com.mx/vendor/5370/3_2/960/jpg/img-2769_5_125370-161704859028815.jpeg" alt={name}>
         </div>

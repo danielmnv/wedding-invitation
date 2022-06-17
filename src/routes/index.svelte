@@ -8,6 +8,7 @@
 	import Event from '$lib/Event.svelte';
 	import GiftArea from '$lib/GiftArea.svelte';
 	import Schedule from '$lib/Schedule.svelte';
+	import Clothing from '$lib/Clothing.svelte';
 </script>
 
 <svelte:head>
@@ -25,6 +26,8 @@
 	<Schedule />
 
 	<GiftArea />
+
+	<Clothing />
 </section>
 
 <style>

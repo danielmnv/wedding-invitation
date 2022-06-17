@@ -1,5 +1,6 @@
 <script>
     import Saos from 'saos';
+    import Title from '$lib/components/Title.svelte';
 	import {
 		Timeline,
 		TimelineItem,
@@ -21,7 +22,7 @@
 </script>
 
 <section class="section">
-    <p class="headline">Itinerario</p>
+    <Title text={'Itinerario'} />
 
     <div class="pt-8">
         <Timeline position="right">
