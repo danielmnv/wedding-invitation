@@ -10,7 +10,7 @@
 
     <!-- Places -->
     <div class="container pt-9">
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Church -->
             <Place
                 time="4:00 pm"

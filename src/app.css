@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Sacramento&display=swap');
 
+@import './animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,7 +41,8 @@ svg {
 
 	.button {
 		@apply
-			flex p-3 gap-x-3
+			flex items-center p-2 gap-x-2 text-sm
+			md:p-3 md:gap-x-3 md:text-base
 			bg-primary uppercase rounded-md text-white font-semibold
 			hover:bg-secondary transition-all duration-500;
 	}

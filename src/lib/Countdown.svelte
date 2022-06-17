@@ -1,4 +1,5 @@
 <script>
+    import Saos from 'saos';
     import CountdownSection from '$lib/CountdownSection.svelte';
     import { onMount } from 'svelte';
 
@@ -34,18 +35,25 @@
     <p class="text-center uppercase p-9 tracking-widest">Sólo faltan:</p>
 
     <!-- Countdown -->
-    <div class="container bg-primary bg-opacity-85 flex flex-row px-28 rounded-md">
-        <div class="flex-1">
-            <CountdownSection number={time.days} unit="días" />
-        </div>
-        <div class="flex-1">
-            <CountdownSection number={time.hours} unit="hrs" />
-        </div>
-        <div class="flex-1">
-            <CountdownSection number={time.minutes} unit="min" />
-        </div>
-        <div class="flex-1">
-            <CountdownSection number={time.seconds} unit="seg" />
-        </div>
+    <div class="container bg-primary bg-opacity-85 px-8 md:px-28 md:rounded-md">
+        <Saos 
+            animation={"fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
+            once={true}
+        >
+            <div class="flex flex-row">
+                <div class="flex-1">
+                    <CountdownSection number={time.days} unit="días" />
+                </div>
+                <div class="flex-1">
+                    <CountdownSection number={time.hours} unit="hrs" />
+                </div>
+                <div class="flex-1">
+                    <CountdownSection number={time.minutes} unit="min" />
+                </div>
+                <div class="flex-1">
+                    <CountdownSection number={time.seconds} unit="seg" />
+                </div>
+            </div>
+        </Saos>
     </div>
 </section>
