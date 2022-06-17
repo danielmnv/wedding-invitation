@@ -17,7 +17,7 @@
             >
                 <h1 class="handwriting text-8xl">Jhazzel</h1>
                 <h3 class="handwriting text-5xl">&</h3>
-                <h1 class="handwriting text-8xl">Edgar</h1>
+                <h1 class="handwriting text-8xl">Alejandro</h1>
             </Saos>
 		</div>
 	</section>
