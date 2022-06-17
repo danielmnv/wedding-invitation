@@ -7,6 +7,7 @@
 	import Countdown from '$lib/Countdown.svelte';
 	import Event from '$lib/Event.svelte';
 	import GiftArea from '$lib/GiftArea.svelte';
+	import Schedule from '$lib/Schedule.svelte';
 </script>
 
 <svelte:head>
@@ -20,6 +21,8 @@
 	<Countdown />
 
 	<Event />
+
+	<Schedule />
 
 	<GiftArea />
 </section>

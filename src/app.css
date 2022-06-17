@@ -51,4 +51,6 @@ svg {
 
 	.headline { @apply handwriting text-5xl text-center; }
 	.subtitle { @apply handwriting text-4xl text-center; }
+
+	.schedule-icon { @apply h-12 w-auto; }
 }
