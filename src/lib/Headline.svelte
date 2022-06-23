@@ -5,7 +5,7 @@
 <section>
     <!-- Names -->
 	<section class="section container flex flex-col gap-y-7">
-        <Title duration={1}>
+        <Title duration={1} top={0}>
             <div slot="custom">
                 <p class="text-center uppercase">¡Nos casamos!</p>
             </div>
