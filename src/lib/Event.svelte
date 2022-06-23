@@ -4,7 +4,7 @@
 <section class="section">
     <!-- Places -->
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid gap-x-6 gap-y-28 grid-cols-1 md:grid-cols-2">
             <!-- Church -->
             <Place
                 time="4:00 pm"
