@@ -51,7 +51,7 @@
                         top={100}
                     >
                         <div class="h-full flex flex-col justify-center items-start md:px-5">
-                            <p class="font-bold text-slate-600">{item.time}</p>
+                            <p class="font-bold text-secondary">{item.time}</p>
                             <h4 class="handwriting text-4xl">{item.title}</h4>
                         </div>
                     </Saos>

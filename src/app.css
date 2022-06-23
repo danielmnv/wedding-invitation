@@ -44,7 +44,7 @@ svg {
 			flex items-center p-2 gap-x-2 text-sm
 			md:p-3 md:gap-x-3 md:text-base
 			bg-primary uppercase rounded-md text-white font-semibold
-			hover:bg-slate-500 transition-all duration-500;
+			hover:bg-secondary transition-all duration-500;
 	}
 
 	.section { @apply py-20; }
