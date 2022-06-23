@@ -1,8 +1,9 @@
 <script>
     import IconLocation from '$lib/icons/Location.svelte';
     import Title from '$lib/components/Title.svelte';
+    import Card from '$lib/components/Card.svelte';
 
-    export let title, name, address, time, url;
+    export let title, name, address, time, url, direction;
 
     function goToDirection(url) {
         window.open(url, '_blank')
@@ -11,22 +12,30 @@
 <section>
     <Title text={title} />
 
-    <div class="card mt-8">
-        <div class="img">
+    <Card 
+        class="mt-8"
+        direction={direction}
+    >
+        <!-- Image -->
+        <div slot="image">
             <img src="https://cdn0.bodas.com.mx/vendor/5370/3_2/960/jpg/img-2769_5_125370-161704859028815.jpeg" alt={name}>
         </div>
-
-        <div class="body">
-            <h3 class="title">{name}</h3>
-            <p class="address">{address}</p>
-            <p class="time">{time}</p>
+        <!-- Body -->
+        <div slot="body">
+            <div class="body">
+                <h3 class="title">{name}</h3>
+                <p class="address">{address}</p>
+                <p class="time">{time}</p>
+            </div>
         </div>
-
-        <div class="actions">
-            <button type="button" class="button" on:click={goToDirection(url)}>
-                <span>Cómo llegar</span>
-                <IconLocation />
-            </button>
+        <!-- Actions -->
+        <div slot="actions">
+            <div class="actions">
+                <button type="button" class="button" on:click={goToDirection(url)}>
+                    <span>Cómo llegar</span>
+                    <IconLocation />
+                </button>
+            </div>
         </div>
-    </div>
+    </Card>
 </section>

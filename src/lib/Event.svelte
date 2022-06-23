@@ -20,6 +20,7 @@
                 name="Hacienda de Letras"
                 address="Teodoro Olivares S/N, San Luis de Letras, 20668 San Luis de Letras, Aguascalientes, Mexico"
                 url="https://www.google.com/maps/dir/?api=1&destination=22.13750203008778,-102.29250177980899"
+                direction="right"
             />
         </div>
     </div>

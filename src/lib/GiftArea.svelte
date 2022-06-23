@@ -13,7 +13,7 @@
     <div class="container pt-20">
         <div class="grid grid-cols-1 md:grid-cols-2">
             <CompanyGifts company="Amazon" image="/amazon.svg" border={true} />
-            <CompanyGifts company="Cantia" image="/cantia.svg" />
+            <CompanyGifts company="Cantia" image="/cantia.svg" direction="right" />
         </div>
     </div>
 </section>
