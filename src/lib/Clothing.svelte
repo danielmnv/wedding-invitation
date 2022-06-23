@@ -1,6 +1,7 @@
 <script>
     import Saos from 'saos';
     import Title from '$lib/components/Title.svelte';
+    import Text from '$lib/components/Text.svelte'
 </script>
 
 <section class="section">
@@ -17,6 +18,6 @@
             <hr class="border-primary">
         </div>
         
-        <p class="text-center uppercase tracking-wider">No niños</p>
+        <Text class="pt-0" content="No niños" />
     </div>
 </section>
