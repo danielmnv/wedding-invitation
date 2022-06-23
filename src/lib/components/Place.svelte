@@ -1,5 +1,6 @@
 <script>
-    import IconLocation from '$lib/icons/Location.svelte';
+    import Fa from 'svelte-fa';
+    import { faMapPin } from '@fortawesome/free-solid-svg-icons';
     import Title from '$lib/components/Title.svelte';
     import Card from '$lib/components/Card.svelte';
 
@@ -33,7 +34,7 @@
             <div class="actions">
                 <button type="button" class="button" on:click={goToDirection(url)}>
                     <span>Cómo llegar</span>
-                    <IconLocation />
+                    <Fa icon={faMapPin} />
                 </button>
             </div>
         </div>

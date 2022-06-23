@@ -1,5 +1,6 @@
 <script>
-    import IconGift from '$lib/icons/Gift.svelte';
+    import Fa from 'svelte-fa';
+    import { faGift } from '@fortawesome/free-solid-svg-icons';
     import Card from '$lib/components/Card.svelte';
 
     export let company, image, border = false, direction;
@@ -22,7 +23,7 @@
             <div class="actions">
                 <button type="button" class="button mx-auto mt-8 md:mt-16">
                     <span>Ver regalos</span>
-                    <IconGift />
+                    <Fa icon={faGift} />
                 </button>
             </div>
         </div>
