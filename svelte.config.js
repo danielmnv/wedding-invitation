@@ -9,6 +9,13 @@ const config = {
 		// Override http methods in the Todo forms
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
+		},
+
+		// Vite
+		vite: {
+			ssr: {
+				noExternal: ['@fortawesome/free-solid-svg-icons']
+			}
 		}
 	},
 	preprocess: [
