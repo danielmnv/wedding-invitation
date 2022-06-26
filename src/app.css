@@ -39,12 +39,22 @@ svg {
 		}
 	}
 
-	.button {
+	.btn {
 		@apply
 			flex items-center p-2 gap-x-2 text-sm
 			md:p-3 md:gap-x-3 md:text-base
-			bg-primary uppercase rounded-md text-white font-semibold
-			hover:bg-secondary transition-all duration-500;
+			uppercase rounded-md font-semibold
+			transition-all duration-500;
+	}
+
+	.button {
+		@apply btn bg-primary text-white hover:bg-secondary;
+
+		&-outline {
+			@apply btn py-1 px-2 md:py-2 md:px-3 border-2 border-primary hover:bg-primary hover:text-white;
+
+			&-secondary { @apply btn py-1 px-2 md:py-2 md:px-3 border-2 border-secondary hover:bg-secondary hover:text-white; }
+		}
 	}
 
 	.section { @apply py-20; }
