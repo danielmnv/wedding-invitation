@@ -9,6 +9,7 @@
 	import GiftArea from '$lib/GiftArea.svelte';
 	import Schedule from '$lib/Schedule.svelte';
 	import Clothing from '$lib/Clothing.svelte';
+	import Access from '$lib/Access.svelte';
 </script>
 
 <svelte:head>
@@ -28,6 +29,8 @@
 	<GiftArea />
 
 	<Clothing />
+
+	<Access />
 </section>
 
 <style>
