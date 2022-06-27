@@ -3,7 +3,7 @@
     import { faGift } from '@fortawesome/free-solid-svg-icons';
     import Card from '$lib/components/Card.svelte';
 
-    export let company, image, border = false, direction;
+    export let company, image, border = false, direction = 'left';
 </script>
 
 <div class="px-3 py-8 md:p-6 {border ? 'border-b border-b-primary md:border-b-0 md:border-r md:border-r-primary' : ''}">

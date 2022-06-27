@@ -4,7 +4,7 @@
     import Title from '$lib/components/Title.svelte';
     import Card from '$lib/components/Card.svelte';
 
-    export let title, name, address, time, url, direction, icon;
+    export let title, name, address, time, url, direction = 'left', icon;
 
     function goToDirection(url) {
         window.open(url, '_blank')
