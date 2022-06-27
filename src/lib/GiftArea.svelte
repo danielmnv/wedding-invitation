@@ -2,11 +2,12 @@
     import CompanyGifts from '$lib/components/CompanyGifts.svelte';
     import Title from '$lib/components/Title.svelte';
     import Text from '$lib/components/Text.svelte';
+    import { faGifts } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <section class="section">
     <div class="container">
-        <Title text={'Regalos'} />
+        <Title text={'Regalos'} icon={faGifts} />
     
         <Text 
             class="pt-16"

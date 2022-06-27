@@ -4,14 +4,14 @@
     import Title from '$lib/components/Title.svelte';
     import Card from '$lib/components/Card.svelte';
 
-    export let title, name, address, time, url, direction;
+    export let title, name, address, time, url, direction, icon;
 
     function goToDirection(url) {
         window.open(url, '_blank')
     }
 </script>
 <section>
-    <Title text={title} />
+    <Title text={title} icon={icon} />
 
     <Card 
         class="mt-8"

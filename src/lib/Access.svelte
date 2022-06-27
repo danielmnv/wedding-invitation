@@ -2,6 +2,7 @@
     import Title from '$lib/components/Title.svelte';
     import GuestTicket from '$lib/components/GuestTicket.svelte';
     import GuestList from '$lib/components/GuestList.svelte';
+    import { faTicket } from '@fortawesome/free-solid-svg-icons'
     
 
     let guest = { value: 'fam1', label: 'Fam. Molina de la Cruz', group: 1, ticket: Math.floor(Math.random() * 8) + 1 },
@@ -9,7 +10,7 @@
 </script>
 
 <section class="section">
-    <Title text="Pases" />
+    <Title text="Pases" icon={faTicket} />
 
     {#if !showList}
     <GuestTicket {guest} bind:showList />

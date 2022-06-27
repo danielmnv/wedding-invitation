@@ -1,5 +1,6 @@
 <script>
     import Place from '$lib/components/Place.svelte';
+    import { faChurch, faDungeon } from '@fortawesome/free-solid-svg-icons'
 </script>
 <section class="section">
     <!-- Places -->
@@ -7,6 +8,7 @@
         <div class="grid gap-x-6 gap-y-28 grid-cols-1 md:grid-cols-2">
             <!-- Church -->
             <Place
+                icon={faChurch}
                 time="4:00 pm"
                 title="Ceremonia"
                 name="Templo"
@@ -15,6 +17,7 @@
 
             <!-- Event -->
             <Place
+                icon={faDungeon}
                 time="6:00 pm"
                 title="Recepción"
                 name="Hacienda de Letras"

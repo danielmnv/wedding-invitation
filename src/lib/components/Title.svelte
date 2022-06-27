@@ -1,7 +1,9 @@
 <script>
     import Saos from 'saos';
+    import Fa from 'svelte-fa';
+    import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons'
 
-    export let text = '', top = 100, duration = 0.6;
+    export let text = '', top = 100, duration = 0.6, icon = faFeatherPointed;
 </script>
 
 <Saos
@@ -12,6 +14,11 @@
     {#if $$slots.custom}
     <slot name="custom"></slot>
     {:else}
-    <p class="headline">{text}</p>
+    <div class="flex flex-col gap-y-5">
+        <div class="text-secondary mx-auto">
+            <Fa icon={icon} size="2x" />
+        </div>
+        <p class="headline">{text}</p>
+    </div>
     {/if}
 </Saos>

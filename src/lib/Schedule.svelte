@@ -1,6 +1,7 @@
 <script>
     import Saos from 'saos';
     import Title from '$lib/components/Title.svelte';
+    import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 	import {
 		Timeline,
 		TimelineItem,
@@ -22,7 +23,7 @@
 </script>
 
 <section class="section">
-    <Title text={'Itinerario'} />
+    <Title text={'Itinerario'} icon={faCalendar} />
 
     <div class="pt-8">
         <Timeline position="right">
