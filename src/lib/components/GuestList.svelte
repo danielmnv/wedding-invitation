@@ -1,23 +1,45 @@
 <script>
+    import { onMount } from 'svelte';
     import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 	import Select from 'svelte-select';
     import Fa from 'svelte-fa';
     import Saos from 'saos';
+
+    // Firestore
+    import { onSnapshot, collection } from 'firebase/firestore';
+    import { db } from '../../firestore.js';
     
     export let guest, showList = true;
 
-	const list = [
-		{ value: 'fam1', label: 'Fam. Molina de la Cruz', group: 1, ticket: Math.floor(Math.random() * 8) + 1 },
-		{ value: 'fam2', label: 'Fam. Perez Lopez', group: 2, ticket: Math.floor(Math.random() * 8) + 1 },
-		{ value: 'fam3', label: 'Fam. Gaytan Molina', group: 1, ticket: Math.floor(Math.random() * 8) + 1},
-	];
+	let list = [];
 
+    // Select properties
 	const groupBy = (item) => `Invitados Novi${item.group == 1 ? 'a' : 'o'}`;
-    const iconProps = { icon: faPeopleGroup }
+    const getOptionLabel = (option) => option.name;
+    const getSelectionLabel = (option) => option.name;
+    const optionIdentifier = 'id';
+    const iconProps = { icon: faPeopleGroup };
 
+    onMount(() => {
+        // Gett full list of guests
+        onSnapshot(collection(db, 'guests'),
+            (querySnapshot) => {
+                list = querySnapshot.docs.map(doc => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    };
+                })
+            },
+            (err) => {}
+        );
+    });
+
+    // Set data of guest
     function setGuest(event) {
-        guest = event.detail;
         showList = false;
+        guest = event.detail;
+        window.history.replaceState({}, '', `/?guest=${encodeURIComponent(guest.name)}`);
     }
 </script>
 
@@ -31,11 +53,14 @@
             <Select 
                 placeholder="Invitados ..."
                 hideEmptyState={true}
-                items={list}
-                groupBy={groupBy}
-                Icon={Fa}
-                iconProps={iconProps}
                 showChevron={true}
+                items={list}
+                Icon={Fa}
+                {groupBy}
+                {iconProps}
+                {getOptionLabel}
+                {getSelectionLabel}
+                {optionIdentifier}
                 on:select={setGuest}
             />
         </div>
