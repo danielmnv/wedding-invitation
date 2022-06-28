@@ -10,7 +10,7 @@
     
     // Services
     import { key } from '../services';
-    const { _guestController } = getContext(key)
+    const { _guestService, _eventService } = getContext(key)
 
     let guest = {}, showList = false;
 
@@ -28,7 +28,7 @@
             return;
         }
 
-        _guestController
+        _guestService
             .get(nameParam)
             .then(doc => {
                 if (!doc) {
@@ -42,11 +42,13 @@
 </script>
 
 <section class="section">
-    <Title text="Pases" icon={faTicket} />
+    {#await _eventService then event}
+    <Title text={event.tickets.title} icon={faTicket} />
 
     {#if !showList}
     <GuestTicket {guest} on:clear={openList} />
     {:else}
     <GuestList bind:guest bind:showList />
     {/if}
+    {/await}
 </section>

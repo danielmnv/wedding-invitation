@@ -56,9 +56,10 @@
 </script>
 
 <section class="section">
+    {#await _eventService then event}
     <Text
         class="pt-0 {!isStarting ? 'visible' : 'invisible'}"
-        content="Sólo faltan:"
+        content={event.headline.countdown.remaining}
     />
 
     <!-- Countdown -->
@@ -78,8 +79,8 @@
                 {:else}
                 <div class="w-full text-center">
                     <!-- TODO: add text and fireworks/animation -->
-                    <p class="pb-1 handwriting font-extrabold text-3xl md:text-5xl md:font-semibold">Start</p>
-                    <p class="uppercase tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">Start</p>
+                    <p class="pb-1 handwriting font-extrabold text-3xl md:text-5xl md:font-semibold">{event.headline.countdown.start}</p>
+                    <p class="uppercase tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">{event.headline.countdown.start}</p>
                 </div>
                 {/if}
             </div>
@@ -89,6 +90,7 @@
     <Text
         class="pb-0"
         hasContainer={true}
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dolores? Repudiandae aperiam deserunt veniam eius deleniti similique molestiae?"
+        content={event.headline.countdown.text}
     />
+    {/await}
 </section>

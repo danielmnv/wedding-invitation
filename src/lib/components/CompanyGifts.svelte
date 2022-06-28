@@ -1,7 +1,9 @@
 <script>
-    import Fa from 'svelte-fa';
     import { faGift } from '@fortawesome/free-solid-svg-icons';
+
+    // Components
     import Card from '$lib/components/Card.svelte';
+    import Fa from 'svelte-fa';
 
     export let company, image, border = false, direction = 'left';
 </script>

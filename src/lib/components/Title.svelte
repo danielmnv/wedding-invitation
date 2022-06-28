@@ -1,7 +1,9 @@
 <script>
+    import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons'
+
+    // Components
     import Saos from 'saos';
     import Fa from 'svelte-fa';
-    import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons'
 
     export let text = '', top = 100, duration = 0.6, icon = faFeatherPointed;
 </script>

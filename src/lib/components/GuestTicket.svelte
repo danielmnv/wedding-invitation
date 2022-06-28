@@ -1,14 +1,17 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
     import { faCircle, faCircleNotch, faPlus, faXmark, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
+    import { createEventDispatcher, getContext } from 'svelte';
 
     // Components
     import Text from '$lib/components/Text.svelte';
     import Fa from 'svelte-fa';
 
-    export let guest;
-
+    // Services
+    import { key } from '../../services'
+    const { _eventService } = getContext(key);
     const dispatch = createEventDispatcher();
+
+    export let guest;
 
     function clear() {
         dispatch('clear');
@@ -20,7 +23,8 @@
 </script>
 
 <div>
-    <Text content="Hemos reservado" />
+    {#await _eventService then event}
+    <Text content={event.tickets.initText} />
     
     <div class="container">
         <div class="flex justify-center gap-x-2">
@@ -39,21 +43,22 @@
 
         <Text class="pb-0 text-xl" content={guest.tickets} />
 
-        <Text class="pt-3" content="Lugar{guest.tickets > 1 ? 'es' : ''} en su honor" />
+        <Text class="pt-3" content={event.tickets.numberText.replace('__plural__', guest.tickets > 1 ? 'es' : '')} />
     </div>
 
     <Text class="subtitle normal-case pb-3 pt-0" content={guest.name} />
 
     <div class="flex justify-center">
         <button class="button-outline-secondary text-sm" on:click={clear}>
-            ¿No eres tú?
+            {event.tickets.clearText}
             <Fa icon={faXmark} />
         </button>
     </div>
 
-    <Text content="Favor de confirmar asistencia" />
+    <Text content={event.tickets.confirmText} />
     
     <div class="flex justify-center gap-x-7 pt-1">
-        <button class="button">Confirmar <Fa icon={faClipboardCheck} on:click={confirm} /></button>
+        <button class="button">{event.tickets.btnText} <Fa icon={faClipboardCheck} on:click={confirm} /></button>
     </div>
+    {/await}
 </div>

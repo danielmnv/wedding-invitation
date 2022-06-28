@@ -9,14 +9,14 @@
 
     // Services
     import { key } from '../../services';
-    const { _guestService } = getContext(key)
+    const { _guestService, _eventService } = getContext(key)
     
     export let guest, showList = true;
 
 	let list = [];
 
     // Select properties
-	const groupBy = (item) => `Invitados Novi${item.group == 1 ? 'a' : 'o'}`;
+	let groupBy;
     const getOptionLabel = (option) => option.name;
     const getSelectionLabel = (option) => option.name;
     const optionIdentifier = 'id';
@@ -30,6 +30,11 @@
     }
 
     onMount(() => {
+        // Group guests
+        _eventService
+            .then(doc => {
+                groupBy = (item) => doc.tickets.groupText.replace('__var__', item.group == 1 ? 'a' : 'o');
+            });
         // Get full list of guests
         _guestService
             .getAll()
@@ -37,29 +42,33 @@
     });
 </script>
 
-<Saos 
-    animation={"fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
-    once={true}
-    top={100}
->
-    <div class="container py-8 px-5 md:px-20">
-        <div class="guest-list text-secondary">
-            <Select 
-                placeholder="Invitados ..."
-                hideEmptyState={true}
-                showChevron={true}
-                items={list}
-                Icon={Fa}
-                {groupBy}
-                {iconProps}
-                {getOptionLabel}
-                {getSelectionLabel}
-                {optionIdentifier}
-                on:select={setGuest}
-            />
+<div>
+    {#await _eventService then event}
+    <Saos 
+        animation={"fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
+        once={true}
+        top={100}
+    >
+        <div class="container py-8 px-5 md:px-20">
+            <div class="guest-list text-secondary">
+                <Select 
+                    placeholder={event.tickets.placeholder}
+                    hideEmptyState={true}
+                    showChevron={true}
+                    items={list}
+                    Icon={Fa}
+                    {groupBy}
+                    {iconProps}
+                    {getOptionLabel}
+                    {getSelectionLabel}
+                    {optionIdentifier}
+                    on:select={setGuest}
+                />
+            </div>
         </div>
-    </div>
-</Saos>
+    </Saos>
+    {/await}
+</div>
 
 <style>
 	.guest-list {

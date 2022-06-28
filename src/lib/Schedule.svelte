@@ -1,7 +1,9 @@
 <script>
-    import Saos from 'saos';
-    import Title from '$lib/components/Title.svelte';
     import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+    import { getContext } from 'svelte';
+
+    // Components
+    import Title from '$lib/components/Title.svelte';
 	import {
 		Timeline,
 		TimelineItem,
@@ -11,23 +13,20 @@
 		TimelineContent,
 		TimelineOppositeContent
 	} from 'svelte-vertical-timeline';
+    import Saos from 'saos';
 
-    let items = [
-        { time: '2:00 pm', title: 'Ceremonia', icon: '/icons/rings.png'},
-        { time: '6:00 pm', title: 'Recepción', icon: '/icons/room.png' },
-        { time: '7:00 pm', title: 'Civíl', icon: '/icons/civil.png' },
-        { time: '9:00 pm', title: 'Cena', icon: '/icons/dinner.png' },
-        { time: '10:00 pm', title: 'Baile', icon: '/icons/dance.png' },
-        { time: '12:00 am', title: 'Fin', icon: '/icons/end.png' },
-    ]
+    // Services
+    import { key } from '../services';
+    const { _eventService } = getContext(key);
 </script>
 
 <section class="section">
-    <Title text={'Itinerario'} icon={faCalendar} />
+    {#await _eventService then event}
+    <Title text={event.schedule.title} icon={faCalendar} />
 
     <div class="pt-8">
         <Timeline position="right">
-            {#each items as item}
+            {#each event.schedule.phases as item}
             <TimelineItem>
                 <TimelineOppositeContent slot="opposite-content">
                     <Saos
@@ -61,6 +60,7 @@
             {/each}
         </Timeline>
     </div>
+    {/await}
 </section>
 
 <style>

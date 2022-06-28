@@ -1,8 +1,10 @@
 <script>
-    import Fa from 'svelte-fa';
     import { faMapPin } from '@fortawesome/free-solid-svg-icons';
+
+    // Components
     import Title from '$lib/components/Title.svelte';
     import Card from '$lib/components/Card.svelte';
+    import Fa from 'svelte-fa';
 
     export let title, name, address, time, url, direction = 'left', icon;
 
