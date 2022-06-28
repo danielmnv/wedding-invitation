@@ -1,10 +1,12 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+    import { faCircle, faCircleNotch, faPlus, faXmark, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
+
+    // Components
     import Text from '$lib/components/Text.svelte';
     import Fa from 'svelte-fa';
-    import { faCircle, faCircleNotch, faPlus, faXmark, faClipboardCheck } from '@fortawesome/free-solid-svg-icons'
 
-    export let guest, showList = false;
+    export let guest;
 
     const dispatch = createEventDispatcher();
 

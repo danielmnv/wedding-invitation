@@ -1,16 +1,23 @@
 <script>
-    import { onMount } from 'svelte';
+    import { faTicket } from '@fortawesome/free-solid-svg-icons'
+    import { onMount, getContext } from 'svelte';
     import { page } from '$app/stores'; 
+
+    // Components
     import Title from '$lib/components/Title.svelte';
     import GuestTicket from '$lib/components/GuestTicket.svelte';
     import GuestList from '$lib/components/GuestList.svelte';
-    import { faTicket } from '@fortawesome/free-solid-svg-icons'
     
-    // Firestore
-    import { onSnapshot, collection, query, where } from 'firebase/firestore';
-    import { db } from '../firestore';
+    // Services
+    import { key } from '../services';
+    const { _guestController } = getContext(key)
 
     let guest = {}, showList = false;
+
+    function openList() {
+        showList = true;
+        window.history.replaceState({}, '', '/');
+    }
 
     onMount(() => {
         const nameParam = $page.url.searchParams.get('guest') || '';
@@ -21,28 +28,17 @@
             return;
         }
 
-        onSnapshot(query(collection(db, 'guests'), where('name', '==', nameParam)),
-            (querySnapshot) => {
-                // Show the list if there is no coincidence
-                if (querySnapshot.empty) {
+        _guestController
+            .get(nameParam)
+            .then(doc => {
+                if (!doc) {
                     openList();
                     return;
                 }
 
-                const doc = querySnapshot.docs[0];
-                guest = {
-                    id: doc.id,
-                    ...doc.data()
-                }
-            },
-            (err) => {}
-        );
+                guest = doc;
+            });
     });
-
-    function openList() {
-        showList = true;
-        window.history.replaceState({}, '', '/');
-    }
 </script>
 
 <section class="section">

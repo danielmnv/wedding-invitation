@@ -1,19 +1,39 @@
 <script>
-    import Saos from 'saos';
+    import { onMount, getContext } from 'svelte';
+
+    // Components
     import CountdownSection from '$lib/components/CountdownSection.svelte';
     import Text from '$lib/components/Text.svelte';
-    import { onMount } from 'svelte';
+    import Saos from 'saos';
 
-    let isStarting = false, time = {
+    // Services
+    import { key } from '../services';
+    const { _eventService } = getContext(key);
+
+    let countDate, isStarting = false, time = {
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0
     }
 
+    function getUnit(index) {
+        switch (index) {
+            case 0:
+                return 'días';
+            case 1:
+                return 'hrs';
+            case 2:
+                return 'min';
+            case 3:
+                return 'seg';
+        }
+    }
+
     onMount(async () => {
+        countDate = await _eventService.then(doc => doc.date);
+
 		const countdown = () => {
-            const countDate = new Date("September 24, 2022 14:00:00");
             const now = new Date().getTime();
             const gap = countDate - now;
 
@@ -33,19 +53,6 @@
         countdown();
         setInterval(() => countdown(), 1000);
 	});
-
-    function getUnit(index) {
-        switch (index) {
-            case 0:
-                return 'días';
-            case 1:
-                return 'hrs';
-            case 2:
-                return 'min';
-            case 3:
-                return 'seg';
-        }
-    }
 </script>
 
 <section class="section">

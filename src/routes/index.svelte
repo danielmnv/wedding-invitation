@@ -3,23 +3,32 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
-	import Loader from '$lib/Loader.svelte';
-	import Headline from '$lib/Headline.svelte';
+	import { onMount, setContext } from 'svelte';
+
+	// Components
 	import Countdown from '$lib/Countdown.svelte';
-	import Event from '$lib/Event.svelte';
+	import Headline from '$lib/Headline.svelte';
 	import GiftArea from '$lib/GiftArea.svelte';
 	import Schedule from '$lib/Schedule.svelte';
 	import Clothing from '$lib/Clothing.svelte';
+	import Loader from '$lib/Loader.svelte';
 	import Access from '$lib/Access.svelte';
+	import Event from '$lib/Event.svelte';
+
+	// Services
+	import { GuestService, event, key } from '../services';
+	setContext(key, {
+		_guestService: new GuestService(),
+		_eventService: event
+	});
 
 	let loading = true;
-
-	onMount(handleLoad);
 
 	function handleLoad() {
 		setTimeout(() => loading = false, 1000);
 	}
+
+	onMount(handleLoad);
 </script>
 
 <svelte:head>

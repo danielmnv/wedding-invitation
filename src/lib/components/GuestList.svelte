@@ -1,13 +1,15 @@
 <script>
-    import { onMount } from 'svelte';
     import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
+    import { onMount, getContext } from 'svelte';
+
+    // Components
 	import Select from 'svelte-select';
     import Fa from 'svelte-fa';
     import Saos from 'saos';
 
-    // Firestore
-    import { onSnapshot, collection } from 'firebase/firestore';
-    import { db } from '../../firestore.js';
+    // Services
+    import { key } from '../../services';
+    const { _guestService } = getContext(key)
     
     export let guest, showList = true;
 
@@ -20,27 +22,19 @@
     const optionIdentifier = 'id';
     const iconProps = { icon: faPeopleGroup };
 
-    onMount(() => {
-        // Gett full list of guests
-        onSnapshot(collection(db, 'guests'),
-            (querySnapshot) => {
-                list = querySnapshot.docs.map(doc => {
-                    return {
-                        id: doc.id,
-                        ...doc.data()
-                    };
-                })
-            },
-            (err) => {}
-        );
-    });
-
     // Set data of guest
     function setGuest(event) {
         showList = false;
         guest = event.detail;
         window.history.replaceState({}, '', `/?guest=${encodeURIComponent(guest.name)}`);
     }
+
+    onMount(() => {
+        // Get full list of guests
+        _guestService
+            .getAll()
+            .then(docs => list = docs);
+    });
 </script>
 
 <Saos 
