@@ -4,6 +4,7 @@
 
     // Components
     import Place from '$lib/components/Place.svelte';
+    import Deco from '$lib/components/Deco.svelte';
 
     // Services
     import { key } from '../services'
@@ -18,6 +19,10 @@
     })
 </script>
 <section class="section">
+    <Deco 
+        class="rotate-45 -left-10 top-2/4 md:top-1/4"
+        image="complement.png"
+    />
     <!-- Places -->
     <div class="container">
         <div class="grid gap-x-6 gap-y-28 grid-cols-1 md:grid-cols-2">
@@ -34,4 +39,8 @@
             {/each}
         </div>
     </div>
+    <Deco 
+        class="-rotate-12 -right-12 -bottom-16 md:bottom-0"
+        image="complement.png"
+    />
 </section>

@@ -57,7 +57,7 @@ svg {
 		}
 	}
 
-	.section { @apply py-20; }
+	.section { @apply py-20 relative; }
 
 	.headline { @apply handwriting text-5xl text-center; }
 	.subtitle { @apply handwriting text-4xl text-center; }

@@ -33,7 +33,7 @@
 
 <svelte:head>
 	<title>Jhazzel & Edgar</title>
-	<meta name="description" content="Jhazzel & Edgar - Boda de invitación" />
+	<meta name="description" content="Jhazzel & Edgar - Invitación de Boda" />
 </svelte:head>
 
 <svelte:window on:load={handleLoad} />

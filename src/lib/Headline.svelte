@@ -3,14 +3,19 @@
 
     // Components
     import Title from '$lib/components/Title.svelte';
+    import Deco from '$lib/components/Deco.svelte';
     import Saos from 'saos';
 
     // Services
     import { key } from '../services';
     const { _eventService } = getContext(key);
 </script>
-<section>
+<section class="section py-0">
     {#await _eventService then event}
+    <Deco 
+        class="top-0 left-0 rotate-180"
+        image="leaves.png"
+    />
     <!-- Names -->
 	<section class="section container flex flex-col gap-y-7">
         <Title duration={1} top={0}>
@@ -80,9 +85,10 @@
             </div>
         </section>
     </Saos>
+
+    <Deco 
+        class="-bottom-16 right-0"
+        image="leaves.png"
+    />
     {/await}
 </section>
-
-<style>
-
-</style>

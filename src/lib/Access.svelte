@@ -4,9 +4,10 @@
     import { page } from '$app/stores'; 
 
     // Components
-    import Title from '$lib/components/Title.svelte';
     import GuestTicket from '$lib/components/GuestTicket.svelte';
     import GuestList from '$lib/components/GuestList.svelte';
+    import Title from '$lib/components/Title.svelte';
+    import Deco from '$lib/components/Deco.svelte';
     
     // Services
     import { key } from '../services';
@@ -43,6 +44,16 @@
 
 <section class="section">
     {#await _eventService then event}
+    <Deco 
+        class="-left-3 top-2/4 -translate-y-2/4 rotate-45"
+        image="deco.png"
+    />
+
+    <Deco 
+        class="-right-8 top-20 -rotate-12"
+        image="deco.png"
+    />
+
     <Title text={event.tickets.title} icon={faTicket} />
 
     {#if !showList}
@@ -50,5 +61,10 @@
     {:else}
     <GuestList bind:guest bind:showList />
     {/if}
+
+    <Deco 
+        class="-rotate-12 -right-12 bottom-0"
+        image="complement.png"
+    />
     {/await}
 </section>

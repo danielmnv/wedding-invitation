@@ -3,7 +3,8 @@
 
     // Components
     import Title from '$lib/components/Title.svelte';
-    import Text from '$lib/components/Text.svelte'
+    import Text from '$lib/components/Text.svelte';
+    import Deco from '$lib/components/Deco.svelte';
 
     // Service
     import { key } from '../services';
@@ -12,6 +13,11 @@
 
 <section class="section">
     {#await _eventService then event}
+    <Deco 
+        class="-rotate-12 -right-12 -top-5"
+        image="complement.png"
+    />
+
     <Title text={event.clothing.title} />
 
     <div class="container pt-16">
@@ -27,5 +33,10 @@
         
         <Text class="pt-0" content={event.clothing.warningText} />
     </div>
+
+    <Deco 
+        class="rotate-90 bottom-0 -left-12"
+        image="leaves.png"
+    />
     {/await}
 </section>

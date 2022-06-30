@@ -4,6 +4,7 @@
 
     // Components
     import Title from '$lib/components/Title.svelte';
+    import Deco from '$lib/components/Deco.svelte';
 	import {
 		Timeline,
 		TimelineItem,
@@ -22,6 +23,15 @@
 
 <section class="section">
     {#await _eventService then event}
+    <Deco
+        class="-left-1 top-15  rotate-45"
+        image="deco.png"
+    />
+    <Deco
+        class="-left-1 top-40 rotate-45"
+        image="deco.png"
+    />
+
     <Title text={event.schedule.title} icon={faCalendar} />
 
     <div class="pt-8">
@@ -60,8 +70,10 @@
             {/each}
         </Timeline>
     </div>
+
+    <Deco
+        class="-right-10 -rotate-90"
+        image="leaves.png"
+    />
     {/await}
 </section>
-
-<style>
-</style>
