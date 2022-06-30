@@ -17,8 +17,9 @@
         dispatch('clear');
     }
 
-    function confirm() {
-        /* TODO: send message */
+    function confirm(phone, msg) {
+        msg = encodeURIComponent(msg.replace('__tickets__', guest.tickets == 1 ? '1 pase' : `${guest.tickets} pases`));
+        window.open(`https://wa.me/521${phone}/?text=${msg}`);
     }
 </script>
 
@@ -58,7 +59,10 @@
     <Text content={event.tickets.confirmText} />
     
     <div class="flex justify-center gap-x-7 pt-1">
-        <button class="button">{event.tickets.btnText} <Fa icon={faClipboardCheck} on:click={confirm} /></button>
+        <button class="button" on:click={confirm((guest.group == 1 ? event.bride.phone : event.groom.phone), event.tickets.whatsappText)}>
+            {event.tickets.btnText}
+            <Fa icon={faClipboardCheck} />
+        </button>
     </div>
     {/await}
 </div>
