@@ -11,12 +11,16 @@
 	font-family: 'Arima Madurai', cursive;
 }
 
-.handwriting {
-	font-family: 'Sacramento', cursive;
+body {
+	@apply bg-slate-200;
 }
 
-svg {
-	@apply stroke-2;
+.main-content {
+	@apply overflow-x-hidden overflow-y-visible h-screen;
+}
+
+.handwriting {
+	font-family: 'Sacramento', cursive;
 }
 
 @layer components {

@@ -2,7 +2,7 @@
     import Saos from 'saos';
 </script>
 
-<section class="absolute w-full h-full bg-slate-300">
+<section class="absolute w-full h-full bg-slate-200">
     <div class="flex justify-center items-center w-full h-full">
         <Saos
             animation="heartbeat 1.5s ease-in-out infinite both"

@@ -57,6 +57,3 @@
 	<Access />
 	{/if}
 </section>
-
-<style>
-</style>
