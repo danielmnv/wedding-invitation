@@ -5,7 +5,11 @@
     import Card from '$lib/components/Card.svelte';
     import Fa from 'svelte-fa';
 
-    export let company, image, border = false, direction = 'left';
+    export let company, border = false, direction = 'left';
+
+    function showGifts(url) {
+        window.open(url, '_blank');
+    }
 </script>
 
 <div class="px-3 py-8 md:p-6 {border ? 'border-b border-b-primary md:border-b-0 md:border-r md:border-r-primary' : ''}">
@@ -16,14 +20,15 @@
         <div slot="body">
             <div class="body">
                 <div class="px-10">
-                    <img src={image} alt={company}>
+                    <img src={company.icon} alt={company.name}>
                 </div>
-            
+                
+                <p class="text-secondary text-lg pt-4">{company.id}</p>
             </div>
         </div>
         <div slot="actions">
             <div class="actions">
-                <button type="button" class="button mx-auto mt-8 md:mt-16">
+                <button type="button" class="button mx-auto" on:click={showGifts(company.url)}>
                     <span>Ver regalos</span>
                     <Fa icon={faGift} />
                 </button>

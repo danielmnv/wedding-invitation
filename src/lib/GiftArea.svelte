@@ -37,7 +37,11 @@
     <div class="container pt-28">
         <div class="grid grid-cols-1 md:grid-cols-2">
             {#each event.gifts.companies as company, i}
-            <CompanyGifts company={company.name} image="/{company.icon}" border={(i % 2) == 0} direction={(i % 2) == 0 ? 'left' : 'right'} />
+            <CompanyGifts 
+                {company}
+                border={(i % 2) == 0}
+                direction={(i % 2) == 0 ? 'left' : 'right'}
+            />
             {/each}
         </div>
     </div>
