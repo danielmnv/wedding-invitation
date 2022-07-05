@@ -1,7 +1,7 @@
 <script>
     import Saos from 'saos';
 
-    export let content, hasContainer = false;
+    export let content = '', hasContainer = false;
 </script>
 
 <Saos
@@ -10,8 +10,12 @@
     top={100}
 >
     <div class:container={hasContainer}>
-        <p class="py-9 text-center uppercase tracking-wide {$$props.class}">
-            {content}
-        </p>
+        {#if $$slots.default}
+            <div class="{$$props.class}">
+                <slot />
+            </div>
+        {:else}
+            <p class="py-9 text-center uppercase tracking-wide {$$props.class}">{content}</p>
+        {/if}
     </div>
 </Saos>
