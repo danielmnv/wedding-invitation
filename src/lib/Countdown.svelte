@@ -4,7 +4,6 @@
     // Components
     import CountdownSection from '$lib/components/CountdownSection.svelte';
     import Text from '$lib/components/Text.svelte';
-    import Deco from '$lib/components/Deco.svelte';
     import Saos from 'saos';
 
     // Services
@@ -59,7 +58,7 @@
 <section class="section">
     {#await _eventService then event}
     <Text
-        class="pt-0 {!isStarting ? 'visible' : 'invisible'}"
+        class="{!isStarting ? 'visible' : 'invisible'}"
         content={event.headline.countdown.remaining}
     />
 
@@ -87,16 +86,5 @@
             </div>
         </Saos>
     </div>
-
-    <Text
-        class="pb-0"
-        hasContainer={true}
-        content={event.headline.countdown.text}
-    />
-
-    <Deco 
-        class="-rotate-12 left-2/4 -translate-x-2/4 -bottom-10 md:-bottom-20"
-        image="leaf.png"
-    />
     {/await}
 </section>

@@ -67,4 +67,6 @@ body {
 	.subtitle { @apply handwriting text-4xl text-center; }
 
 	.schedule-icon { @apply h-12 w-auto; }
+
+	.people-item { @apply uppercase tracking-wide p-1 text-lg; }
 }

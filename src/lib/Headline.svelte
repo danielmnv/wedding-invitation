@@ -3,6 +3,7 @@
 
     // Components
     import Title from '$lib/components/Title.svelte';
+    import Text from '$lib/components/Text.svelte';
     import Deco from '$lib/components/Deco.svelte';
     import Saos from 'saos';
 
@@ -12,27 +13,35 @@
 </script>
 <section class="section py-0">
     {#await _eventService then event}
-    <Deco 
-        class="top-0 left-0 rotate-180"
-        image="leaves.png"
-    />
     <!-- Names -->
-	<section class="section container flex flex-col gap-y-7">
-        <Title duration={1} top={0}>
-            <div slot="custom">
-                <p class="text-center uppercase">{event.headline.initText}</p>
+	<section class="section">
+        <Deco 
+            class="top-0 left-0 rotate-180"
+            image="leaves.png"
+        />
+
+        <div class="container flex flex-col gap-y-7">
+            <Title duration={1} top={0}>
+                <div slot="custom">
+                    <p class="text-center uppercase">{event.headline.initText}</p>
+                </div>
+            </Title>
+            <div class="text-center">
+                <Saos 
+                    animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}
+                    once={true}
+                >
+                    <h1 class="handwriting text-6xl md:text-8xl">{event.bride.name}</h1>
+                    <h3 class="handwriting pt-6 text-3xl md:text-5xl">&</h3>
+                    <h1 class="handwriting text-6xl md:text-8xl">{event.groom.name}</h1>
+                </Saos>
             </div>
-        </Title>
-		<div class="text-center">
-            <Saos 
-                animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}
-                once={true}
-            >
-                <h1 class="handwriting text-6xl md:text-8xl">{event.bride.name}</h1>
-                <h3 class="handwriting pt-6 text-3xl md:text-5xl">&</h3>
-                <h1 class="handwriting text-6xl md:text-8xl">{event.groom.name}</h1>
-            </Saos>
-		</div>
+        </div>
+
+        <Deco 
+            class="-bottom-8 right-0"
+            image="leaves.png"
+        />
 	</section>
 
     <!-- Date -->
@@ -86,9 +95,29 @@
         </section>
     </Saos>
 
-    <Deco 
-        class="-bottom-16 right-0"
-        image="leaves.png"
-    />
+    <div class="relative">
+        <Deco 
+            class="-bottom-2/4 md:bottom-0 rotate-45"
+            image="deco.png"
+        />
+        <Deco 
+            class="-bottom-3/4 rotate-45 -left-16 hidden md:block"
+            image="complement.png"
+        />
+
+        <Text
+            hasContainer={true}
+            content={event.headline.phrase}
+        />
+
+        <Deco 
+            class="-bottom-2/4 md:bottom-0 right-0 -scale-x-100 -rotate-45"
+            image="deco.png"
+        />
+        <Deco 
+            class="-bottom-3/4 -right-16 -scale-x-100 -rotate-45 hidden md:block"
+            image="complement.png"
+        />
+    </div>
     {/await}
 </section>
