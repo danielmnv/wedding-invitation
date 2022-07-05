@@ -13,7 +13,9 @@
 	import Clothing from '$lib/Clothing.svelte';
 	import Loader from '$lib/Loader.svelte';
 	import Access from '$lib/Access.svelte';
+	import People from '$lib/People.svelte';
 	import Event from '$lib/Event.svelte';
+	import Book from '$lib/Book.svelte';
 
 	// Services
 	import { GuestService, event, key } from '../services';
@@ -46,6 +48,8 @@
 
 	<Countdown />
 
+	<People />
+
 	<Event />
 
 	<Schedule />
@@ -55,5 +59,7 @@
 	<Clothing />
 
 	<Access />
+
+	<Book />
 	{/if}
 </section>
