@@ -15,6 +15,9 @@ const config = {
 		vite: {
 			ssr: {
 				noExternal: ['@fortawesome/free-solid-svg-icons']
+			},
+			optimizeDeps: { 
+				include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
 			}
 		}
 	},

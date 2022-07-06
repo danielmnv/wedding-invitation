@@ -2,6 +2,7 @@
     import { getContext } from 'svelte';
 
     // Components
+    import Slider from '$lib/components/Slider.svelte';
     import Title from '$lib/components/Title.svelte';
     import Text from '$lib/components/Text.svelte';
     import Deco from '$lib/components/Deco.svelte';
@@ -43,6 +44,8 @@
             image="leaves.png"
         />
 	</section>
+
+    <Slider class="pt-10" />
 
     <!-- Date -->
     <Saos
