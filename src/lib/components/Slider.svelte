@@ -25,7 +25,7 @@
 
     .img-container::before, .img-container::after{
         content: "";
-        background: url('rip.svg') bottom center;
+        background: url('/rip.svg') bottom center;
         @apply absolute left-0 h-5 w-full bg-auto;
     }
     .img-container::before {
