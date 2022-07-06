@@ -18,10 +18,11 @@
 	import Book from '$lib/Book.svelte';
 
 	// Services
-	import { GuestService, event, key } from '../services';
+	import { Guest, Image, Event, key } from '../services';
 	setContext(key, {
-		_guestService: new GuestService(),
-		_eventService: event
+		_guestService: new Guest(),
+		_imageService: new Image(),
+		_eventService: Event
 	});
 
 	let loading = true;

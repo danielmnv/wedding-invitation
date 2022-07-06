@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
+import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
+import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -14,9 +15,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const store = getFirestore(app);
+const storage = getStorage(app);
 
 if (!import.meta.env.PROD) {
     connectFirestoreEmulator(store, 'localhost', 8880);
+    connectStorageEmulator(storage, 'localhost', 9199);
 }
 
-export { store };
+export { store, storage };
