@@ -1,20 +1,28 @@
 <script>
+    // Components
     import Carousel from 'svelte-carousel';
+    import Saos from 'saos';
 </script>
 
-<div class="{$$props.class}">
-    <Carousel
-        autoplay
-        arrows={false}
-        autoplayDuration={3000}
-    >
-        {#each Array(3) as _, index (index)}
-            <div class="img-container">
-                <img class="slider" src="https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZyUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="No">
-            </div>
-        {/each}
-    </Carousel>
-</div>
+<Saos
+    animation="puff-in-top 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both"
+    once={true}
+    top={100}
+>
+    <div class="{$$props.class}">
+        <Carousel
+            autoplay
+            arrows={false}
+            autoplayDuration={3000}
+        >
+            {#each Array(3) as _, index (index)}
+                <div class="img-container">
+                    <img class="slider" src="https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZyUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="No">
+                </div>
+            {/each}
+        </Carousel>
+    </div>
+</Saos>
 
 <style>
     .img-container {

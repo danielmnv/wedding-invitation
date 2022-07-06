@@ -42,7 +42,7 @@
     });
 </script>
 
-<section class="section">
+<section class="section z-10">
     {#await _eventService then event}
     <Deco 
         class="-left-3 top-2/4 -translate-y-2/4 rotate-45"
