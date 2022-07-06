@@ -17,10 +17,10 @@ class Image {
     }
 
     /**
-     * Gets all the images
+     * Gets all images from the directory
      * @returns Promise
      */
-    async get() {
+    async getDirectory() {
         let items = [];
 
         const list = await listAll(this.ref);
@@ -30,6 +30,14 @@ class Image {
         }
 
         return items;
+    }
+
+    /**
+     * Gets the url of the image
+     * @returns Promise
+     */
+    async get() {
+        return await getDownloadURL(this.ref);
     }
 }
 

@@ -6,7 +6,7 @@
     import Card from '$lib/components/Card.svelte';
     import Fa from 'svelte-fa';
 
-    export let title, name, address, time, url, direction = 'left', icon;
+    export let title, name, address, time, url, image, icon, direction = 'left';
 
     function goToDirection(url) {
         window.open(url, '_blank')
@@ -21,7 +21,9 @@
     >
         <!-- Image -->
         <div slot="image">
-            <img src="https://cdn0.bodas.com.mx/vendor/5370/3_2/960/jpg/img-2769_5_125370-161704859028815.jpeg" alt={name}>
+            <div class="img">
+                <img src={image} alt={name}>
+            </div>
         </div>
         <!-- Body -->
         <div slot="body">

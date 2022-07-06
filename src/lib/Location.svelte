@@ -8,7 +8,7 @@
 
     // Services
     import { key } from '../services'
-    const { _eventService } = getContext(key);
+    const { _eventService, _imageService } = getContext(key);
 
     let phases = [];
 
@@ -27,7 +27,9 @@
     <div class="container">
         <div class="grid gap-x-6 gap-y-28 grid-cols-1 md:grid-cols-2">
             {#each phases as phase, i}
+            {#await _imageService.setPath(phase.image).get() then image}
             <Place
+                {image}
                 icon={phase.icon}
                 time={phase.time}
                 title={phase.title}
@@ -35,7 +37,8 @@
                 address={phase.address}
                 url={phase.url}
                 direction={(i % 2) == 0 ? 'left' : 'right'}
-            />
+            />  
+            {/await}
             {/each}
         </div>
     </div>
