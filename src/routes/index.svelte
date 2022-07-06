@@ -11,10 +11,10 @@
 	import GiftArea from '$lib/GiftArea.svelte';
 	import Schedule from '$lib/Schedule.svelte';
 	import Clothing from '$lib/Clothing.svelte';
+	import Location from '$lib/Location.svelte';
 	import Loader from '$lib/Loader.svelte';
 	import Access from '$lib/Access.svelte';
 	import People from '$lib/People.svelte';
-	import Event from '$lib/Event.svelte';
 	import Book from '$lib/Book.svelte';
 
 	// Services
@@ -51,7 +51,7 @@
 
 	<People />
 
-	<Event />
+	<Location />
 
 	<Schedule />
 

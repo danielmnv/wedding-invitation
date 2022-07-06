@@ -51,6 +51,7 @@
     <Saos
         animation="fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"
         once={true}
+        top={150}
     >
         <section class="section container py-10">
             <div class="grid grid-cols-3">
