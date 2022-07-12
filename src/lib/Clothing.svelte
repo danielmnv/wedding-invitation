@@ -31,7 +31,7 @@
             <hr class="border-primary">
         </div>
         
-        <Text class="pt-0" content={event.clothing.warningText} />
+        <Text class="pt-0 text-lg font-extrabold" content={event.clothing.warningText} />
     </div>
 
     <Deco 

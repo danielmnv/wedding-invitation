@@ -13,7 +13,7 @@
     let phases = [];
 
     onMount(async () => {
-        const snapshot = await _eventService.then(event => event.schedule.phases);
+        const snapshot = await _eventService.then(event => event.location);
 
         phases = [...phases, { ...snapshot[0], icon: faChurch }, { ...snapshot[1], icon: faDungeon }];
     })
