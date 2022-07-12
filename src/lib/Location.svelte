@@ -27,7 +27,7 @@
     <div class="container">
         <div class="grid gap-x-6 gap-y-28 grid-cols-1 md:grid-cols-2">
             {#each phases as phase, i}
-            {#await _imageService.setPath(phase.image).get() then image}
+            {#await _imageService.get(phase.image) then image}
             <Place
                 {image}
                 icon={phase.icon}

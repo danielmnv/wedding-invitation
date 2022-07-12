@@ -30,9 +30,9 @@
                 arrows={false}
                 autoplayDuration={3000}
             >
-                {#each images as image, index}
+                {#each images as img}
                     <div class="img-container">
-                        <img class="thumbnail" src={image} alt="WeddingImage_{index}">
+                        <img class="thumbnail" src={img.url} alt="WeddingImage_{img.order}">
                     </div>
                 {/each}
             </Carousel>
