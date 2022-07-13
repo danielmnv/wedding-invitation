@@ -21,7 +21,7 @@
             >
                 {#each images as img}
                     <div class="img-container">
-                        <img class="thumbnail" src={img.url} alt="WeddingImage_{img.order}">
+                        <img class="thumbnail" src={img.url} alt="WeddingImage_{img.index}">
                     </div>
                 {/each}
             </Carousel>

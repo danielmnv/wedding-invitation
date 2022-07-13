@@ -20,7 +20,7 @@ class Image {
      * Gets all images from the directory
      * @returns Promise
      */
-    async getDirectory() {
+    async getDirectory(orderBy = 'order') {
         let items = [];
 
         const list = await listAll(this.path);
@@ -29,13 +29,13 @@ class Image {
             items = [ 
                 ...items,
                 {
-                    index: items,
+                    index: i + 1,
                     url: await this.get(list.items[i]),
                     ... await this.getMeta(list.items[i])
                 }
             ]
         }
-        items.sort((a, b) => a.order - b.order);
+        items.sort((a, b) => (a[orderBy] ?? 0) - (b[orderBy] ?? 0));
 
         return items;
     }
@@ -66,8 +66,9 @@ class Image {
         let max = 40, min = 10;
 
         return await getMetadata(path).then((meta) => ({
-            order: meta.order ?? 0,
-            height: meta.height ?? Math.floor(Math.random() * (max - min + 1) + min)
+            order: meta.customMetadata?.order ?? 0,
+            height: meta.customMetadata?.height ?? Math.floor(Math.random() * (max - min + 1) + min),
+            name: meta.name
         }))
     }
 }

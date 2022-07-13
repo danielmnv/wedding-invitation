@@ -33,7 +33,7 @@
                         class="thumbnail min-h-[10rem]"
                         style="height: {item.height}rem"
                         src={item.url} 
-                        alt="No"
+                        alt="Book_{item.index}"
                     >
                 </div>
             </Saos>
