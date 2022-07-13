@@ -11,6 +11,8 @@
     // Services
     import { key } from '../services';
     const { _eventService } = getContext(key);
+
+    export let slides;
 </script>
 <section class="section py-0">
     {#await _eventService then event}
@@ -45,7 +47,7 @@
         />
 	</section>
 
-    <Slider class="pt-10" />
+    <Slider class="pt-10" images={slides} />
 
     <!-- Date -->
     <Saos

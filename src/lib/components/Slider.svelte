@@ -1,23 +1,12 @@
 <script>
-    import { getContext } from 'svelte';
-
     // Components
     import Carousel from 'svelte-carousel';
     import Saos from 'saos';
 
-    // Services
-    import { key } from '../../services';
-    const { _imageService } = getContext(key);
+    export let images;
 </script>
 
 <div>
-    {#await _imageService.setPath('slider').getDirectory()}
-    <!-- Skeleton -->
-    <div class="{$$props.class}">
-        <div class="img-container">
-        </div>
-    </div>
-    {:then images}
     <!-- Carousel -->
     <Saos
         animation="puff-in-top 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) both"
@@ -38,7 +27,6 @@
             </Carousel>
         </div>
     </Saos>
-    {/await}
 </div>
 
 <style>

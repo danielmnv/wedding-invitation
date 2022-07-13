@@ -25,13 +25,21 @@
 		_eventService: Event
 	});
 
-	let loading = true;
+	let loading = true, slides;
 
-	function handleLoad() {
-		setTimeout(() => loading = false, 1000);
-	}
-
-	onMount(handleLoad);
+	onMount(() => {
+		/**
+		 * Do not show the site until slides are laoded.
+		 * This is important because they are displayed at the top of the site
+		*/
+        new Image()
+            .setPath('slider')
+            .getDirectory()
+            .then((images) => {
+                slides = [ ...images ]
+				loading = false
+            })
+    })
 </script>
 
 <svelte:head>
@@ -39,13 +47,11 @@
 	<meta name="description" content="Jhazzel & Edgar - Invitación de Boda" />
 </svelte:head>
 
-<svelte:window on:load={handleLoad} />
-
 <section>
 	{#if loading}
 		<Loader />
 	{:else}
-	<Headline />
+	<Headline {slides} />
 
 	<Countdown />
 
