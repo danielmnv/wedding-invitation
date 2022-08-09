@@ -1,5 +1,5 @@
 <script>
-    import { faGift } from '@fortawesome/free-solid-svg-icons';
+    import { faGift, faStore } from '@fortawesome/free-solid-svg-icons';
 
     // Components
     import Card from '$lib/components/Card.svelte';
@@ -29,8 +29,8 @@
         <div slot="actions">
             <div class="actions">
                 <button type="button" class="button mx-auto" on:click={showGifts(company.url)}>
-                    <span>Ver regalos</span>
-                    <Fa icon={faGift} />
+                    <span>{ company.btnText }</span>
+                    <Fa icon={company.isOnline ? faGift : faStore} />
                 </button>
             </div>
         </div>
