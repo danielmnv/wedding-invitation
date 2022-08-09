@@ -56,7 +56,7 @@
         </button>
     </div>
 
-    <Text content={event.tickets.confirmText} />
+    <Text class="font-extrabold" content={event.tickets.confirmText} />
     
     <div class="flex justify-center gap-x-7 pt-1">
         <button class="button" on:click={confirm((guest.group == 1 ? event.bride.phone : event.groom.phone), event.tickets.whatsappText)}>

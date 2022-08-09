@@ -116,6 +116,11 @@
             content={event.headline.phrase}
         />
 
+        <Text
+            class="pt-0 italic"
+            content={event.headline.reference}
+        />
+
         <Deco 
             class="-bottom-2/4 md:bottom-0 right-0 -scale-x-100 -rotate-45"
             image="deco.png"

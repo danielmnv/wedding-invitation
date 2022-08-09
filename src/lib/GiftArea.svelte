@@ -29,12 +29,12 @@
         />
 
         <Deco 
-            class="-rotate-12 left-2/4 -translate-x-2/4 -bottom-24 md:-bottom-28"
+            class="-rotate-12 left-2/4 -translate-x-2/4 -bottom-32 md:-bottom-40"
             image="leaf.png"
         />
     </div>
 
-    <div class="container pt-28">
+    <div class="container pt-36 md:pt-52">
         <div class="grid grid-cols-1 md:grid-cols-2">
             {#each event.gifts.companies as company, i}
             <CompanyGifts 
