@@ -39,15 +39,15 @@
             {#each event.schedule.phases as item}
             <TimelineItem>
                 <TimelineOppositeContent slot="opposite-content">
-                    <Saos
-                        animation={'puff-in-tr 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both'}
-                        once={true}
-                        top={100}
-                    >
-                        <div class="h-full flex justify-end md:py-3 md:px-3">
+                    <div class="h-full flex items-center justify-end">
+                        <Saos
+                            animation={'puff-in-tr 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both'}
+                            once={true}
+                            top={100}
+                        >
                             <img class="schedule-icon" src={item.icon} alt={item.title}>
-                        </div>
-                    </Saos>
+                        </Saos>
+                    </div>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector style={'background-color: #cdaf57;'}/>
