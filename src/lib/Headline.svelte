@@ -26,17 +26,17 @@
         <div class="container flex flex-col gap-y-7">
             <Title duration={1} top={0}>
                 <div slot="custom">
-                    <p class="text-center uppercase">{event.headline.initText}</p>
+                    <p class="text-center text-black/50 welcome">{event.headline.initText}</p>
                 </div>
             </Title>
-            <div class="text-center">
+            <div class="text-center couple-names">
                 <Saos 
                     animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}
                     once={true}
                 >
-                    <h1 class="handwriting text-6xl md:text-8xl">{event.bride.name}</h1>
-                    <h3 class="handwriting pt-6 text-3xl md:text-5xl">&</h3>
-                    <h1 class="handwriting text-6xl md:text-8xl">{event.groom.name}</h1>
+                    <h1 class="text-8xl">{event.bride.name}</h1>
+                    <h3 class="py-6 text-5xl text-primary">&</h3>
+                    <h1 class="text-8xl">{event.groom.name}</h1>
                 </Saos>
             </div>
         </div>
@@ -63,7 +63,7 @@
                         <div class="table-cell align-middle">
                             <div class="before:table-cell after:table-cell">
                                 <div class="py-2 border-y-2 border-primary">
-                                    <p class="text-center tracking-widest uppercase text-base md:text-lg">{event.weekday}</p>
+                                    <p class="text-center tracking-widest text-base md:text-lg">{event.weekday}</p>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             <div class="h-full">
                                 <div class="before:table-cell after:table-cell h-full">
                                     <div class="h-full flex flex-col justify-around">
-                                        <p class="text-center uppercase tracking-wider text-base md:text-lg">{event.start}</p>
+                                        <p class="text-center tracking-wider text-base md:text-lg">{event.start}</p>
                                         <p class="text-center handwriting text-5xl md:text-6xl">{event.date.getDate()}</p>
                                         <p class="text-center tracking-wider text-base md:text-lg">{event.date.getFullYear()}</p>
                                     </div>
@@ -91,7 +91,7 @@
                         <div class="table-cell align-middle">
                             <div class="before:table-cell after:table-cell">
                                 <div class="py-2 border-y-2 border-primary">
-                                    <p class="text-center tracking-widest uppercase text-base md:text-lg">{event.month}</p>
+                                    <p class="text-center tracking-widest text-base md:text-lg">{event.month}</p>
                                 </div>
                             </div>
                         </div>

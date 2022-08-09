@@ -15,7 +15,7 @@
                 <slot />
             </div>
         {:else}
-            <p class="py-9 text-center uppercase tracking-wide {$$props.class}">{content}</p>
+            <p class="py-9 text-center tracking-wide {$$props.class}">{content}</p>
         {/if}
     </div>
 </Saos>

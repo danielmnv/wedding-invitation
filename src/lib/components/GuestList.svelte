@@ -85,6 +85,6 @@
 		--selectedItemPadding: 0 10px 0 8px;
 		--inputPadding: 0 10px 0 40px;
 
-        @apply transition-all duration-500;
+        @apply transition-all duration-500 normal-case;
 	}
 </style>

@@ -11,7 +11,7 @@
 		<slot />
 	</main>
 	
-	<footer>
+	<footer class="normal-case">
 		<div class="bg-slate-600 text-white p-2 flex items-center justify-between gap-x-5">
 			<div class="w-8">
 				<a href="https://danielmolina.me" target="_blank">

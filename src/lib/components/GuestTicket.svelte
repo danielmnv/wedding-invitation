@@ -47,7 +47,7 @@
         <Text class="pt-3" content={event.tickets.numberText.replace('__plural__', guest.tickets > 1 ? 'es' : '')} />
     </div>
 
-    <Text class="subtitle normal-case pb-3 pt-0" content={guest.name} />
+    <Text class="subtitle pb-3 pt-0" content={guest.name} />
 
     <div class="flex justify-center">
         <button class="button-outline-secondary text-sm" on:click={clear}>

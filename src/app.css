@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Sacramento&family=Stalemate&display=swap');
 
 @import './animations.css';
 
@@ -9,18 +8,25 @@
 
 :root {
 	font-family: 'Arima Madurai', cursive;
+	@apply uppercase;
 }
 
 body {
-	@apply bg-slate-200;
+	@apply bg-zinc-200;
 }
 
 .main-content {
 	@apply overflow-x-hidden overflow-y-visible h-screen;
 }
 
+.couple-names {
+	font-family: 'Stalemate', cursive;
+	@apply normal-case;
+}
+
 .handwriting {
 	font-family: 'Sacramento', cursive;
+	@apply normal-case;
 }
 
 @layer components {
@@ -35,7 +41,7 @@ body {
 		.body {
 			@apply p-6 flex flex-col justify-around gap-6 items-center;
 			.title, { @apply subtitle; }
-			.address { @apply text-center }
+			.address { @apply text-center; }
 			.time { @apply text-3xl handwriting }
 		}
 		.actions {
@@ -68,7 +74,7 @@ body {
 
 	.schedule-icon { @apply h-12 w-auto; }
 
-	.people-item { @apply uppercase tracking-wide p-1 text-lg; }
+	.people-item { @apply tracking-wide p-1 text-lg; }
 
 	.thumbnail { @apply w-full h-full object-cover; }
 }

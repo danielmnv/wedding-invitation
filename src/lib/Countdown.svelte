@@ -80,7 +80,7 @@
                 <div class="w-full text-center">
                     <!-- TODO: add text and fireworks/animation -->
                     <p class="pb-1 handwriting font-extrabold text-3xl md:text-5xl md:font-semibold">{event.headline.countdown.start}</p>
-                    <p class="uppercase tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">{event.headline.countdown.start}</p>
+                    <p class="tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">{event.headline.countdown.start}</p>
                 </div>
                 {/if}
             </div>
