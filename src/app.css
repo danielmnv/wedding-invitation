@@ -11,7 +11,7 @@
 	@apply uppercase;
 }
 
-body {
+body, .loader {
 	@apply bg-zinc-200;
 }
 
