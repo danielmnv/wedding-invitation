@@ -16,7 +16,7 @@
     {#if $$slots.custom}
     <slot name="custom"></slot>
     {:else}
-    <div class="flex flex-col gap-y-5">
+    <div class="flex flex-col gap-y-5 {$$props.class}">
         <div class="text-secondary mx-auto">
             {#if icon}
             <Fa icon={icon} size="2x" />

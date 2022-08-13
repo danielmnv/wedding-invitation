@@ -1,5 +1,6 @@
 <script>
     import { getContext } from 'svelte';
+    import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
     // Components
     import Slider from '$lib/components/Slider.svelte';
@@ -129,6 +130,18 @@
             class="-bottom-3/4 -right-16 -scale-x-100 -rotate-45 hidden md:block"
             image="complement.png"
         />
+
+        <Title 
+            text=""
+            class="pt-16 pb-0"
+            icon={faEnvelopeOpenText}
+        />
+        <Text
+            class="pt-0 pb-2"
+            hasContainer={true}
+            content={event.headline.welcomeText}
+        />
+        
     </div>
     {/await}
 </section>
