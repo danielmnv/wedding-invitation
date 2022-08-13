@@ -104,11 +104,11 @@
 
     <div class="relative">
         <Deco 
-            class="-bottom-2/4 md:bottom-0 rotate-45"
+            class="-bottom-1/4 md:bottom-1/4 rotate-45"
             image="deco.png"
         />
         <Deco 
-            class="-bottom-3/4 rotate-45 -left-16 hidden md:block"
+            class="bottom-1/3 md:-bottom-2/4 rotate-45 -left-16"
             image="complement.png"
         />
 
@@ -123,11 +123,11 @@
         />
 
         <Deco 
-            class="-bottom-2/4 md:bottom-0 right-0 -scale-x-100 -rotate-45"
+            class="-bottom-1/4 md:bottom-1/4 right-0 -scale-x-100 -rotate-45"
             image="deco.png"
         />
         <Deco 
-            class="-bottom-3/4 -right-16 -scale-x-100 -rotate-45 hidden md:block"
+            class="bottom-1/3 md:-bottom-2/4 -right-16 -scale-x-100 -rotate-45"
             image="complement.png"
         />
 
