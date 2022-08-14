@@ -77,4 +77,6 @@ body, .loader {
 	.people-item { @apply tracking-wide p-1 text-lg; }
 
 	.thumbnail { @apply w-full h-full object-cover; }
+
+	.center-item { @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2; }
 }
