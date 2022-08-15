@@ -1,10 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Sacramento&family=Stalemate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Sacramento&display=swap');
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
 
 @import './animations.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Clicker Script';
+    src: url('./fonts/clicker-script.woff2') format('woff2'),
+        url('./fonts/clicker-script.woff') format('woff'),
+		url('./fonts/clicker-script.ttf') format('ttf');
+}
 
 :root {
 	font-family: 'Arima Madurai', cursive;
@@ -20,12 +28,17 @@ body, .loader {
 }
 
 .couple-names {
-	font-family: 'Stalemate', cursive;
+	font-family: 'Brittany Signature', sans-serif;
 	@apply normal-case;
 }
 
 .handwriting {
 	font-family: 'Sacramento', cursive;
+	@apply normal-case;
+}
+
+.loader-text {
+	font-family: 'Clicker Script', cursive;
 	@apply normal-case;
 }
 
