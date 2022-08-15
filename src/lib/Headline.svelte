@@ -30,14 +30,14 @@
                     <p class="text-center text-black/50 welcome">{event.headline.initText}</p>
                 </div>
             </Title>
-            <div class="text-center couple-names">
+            <div class="text-center couple-names text-primary">
                 <Saos 
                     animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}
                     once={true}
                 >
-                    <h1 class="text-8xl">{event.bride.name}</h1>
-                    <h3 class="py-6 text-5xl text-primary">&</h3>
-                    <h1 class="text-8xl">{event.groom.name}</h1>
+                    <h1 class="text-6xl">{event.bride.name}</h1>
+                    <h3 class="py-6 text-5xl">&</h3>
+                    <h1 class="text-6xl">{event.groom.name}</h1>
                 </Saos>
             </div>
         </div>
@@ -56,48 +56,21 @@
         once={true}
         top={150}
     >
-        <section class="section container py-10">
-            <div class="grid grid-cols-3">
-                <!-- Day -->
-                <div class="h-48 pr-0">
-                    <div class="table w-full h-full">
-                        <div class="table-cell align-middle">
-                            <div class="before:table-cell after:table-cell">
-                                <div class="py-2 border-y-2 border-primary">
-                                    <p class="text-center tracking-widest text-base md:text-lg">{event.weekday}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="section container py-16">
+            <div class="flex justify-center items-center">
+                <div class="date-section">
+                    <p class="">{event.date.getDate()}</p>
                 </div>
-                <!-- Number -->
-                <div class="h-48 border-x-2 border-primary">
-                    <div class="h-48 pr-0">
-                        <div class="w-full h-full">
-                            <div class="h-full">
-                                <div class="before:table-cell after:table-cell h-full">
-                                    <div class="h-full flex flex-col justify-around">
-                                        <p class="text-center tracking-wider text-base md:text-lg">{event.start}</p>
-                                        <p class="text-center handwriting text-5xl md:text-6xl">{event.date.getDate()}</p>
-                                        <p class="text-center tracking-wider text-base md:text-lg">{event.date.getFullYear()}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="date-section border-x-2 border-primary">
+                    <p class="text-center">{event.month}</p>
                 </div>
-                <!-- Month -->
-                <div class="h-48 pl-0">
-                    <div class="table w-full h-full">
-                        <div class="table-cell align-middle">
-                            <div class="before:table-cell after:table-cell">
-                                <div class="py-2 border-y-2 border-primary">
-                                    <p class="text-center tracking-widest text-base md:text-lg">{event.month}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="date-section">
+                    <p class="">{event.date.getFullYear().toString().slice(-2)}</p>
                 </div>
+            </div>
+
+            <div class="flex justify-center date-section pt-2">
+                <p>{event.start}</p>
             </div>
         </section>
     </Saos>

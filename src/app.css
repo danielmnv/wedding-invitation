@@ -92,4 +92,11 @@ body, .loader {
 	.thumbnail { @apply w-full h-full object-cover; }
 
 	.center-item { @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2; }
+
+	.date-section {
+		@apply px-3 md:px-6;
+		p {
+			@apply text-primary font-extrabold tracking-widest text-2xl md:text-4xl;
+		}
+	}
 }
