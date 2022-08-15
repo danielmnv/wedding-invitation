@@ -35,9 +35,9 @@
                     animation={"scale-in-hor-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"}
                     once={true}
                 >
-                    <h1 class="text-6xl">{event.bride.name}</h1>
-                    <h3 class="py-6 text-5xl">&</h3>
-                    <h1 class="text-6xl">{event.groom.name}</h1>
+                    <h1 class="text-6xl leading-[9rem]">{event.bride.name}</h1>
+                    <h3 class="text-5xl">&</h3>
+                    <h1 class="text-6xl leading-[9rem]">{event.groom.name}</h1>
                 </Saos>
             </div>
         </div>
