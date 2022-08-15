@@ -50,9 +50,9 @@
                     </div>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineConnector style={'background-color: #cdaf57;'}/>
+                    <TimelineConnector style={'background-color: #c69a47;'}/>
                     <TimelineDot style={'background-color: transparent; border-color: rgb(71 85 105);'} />
-                    <TimelineConnector style={'background-color: #cdaf57;'} />
+                    <TimelineConnector style={'background-color: #c69a47;'} />
                 </TimelineSeparator>
                 <TimelineContent>
                     <Saos

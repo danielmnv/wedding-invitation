@@ -22,7 +22,7 @@
             case 0:
                 return 'días';
             case 1:
-                return 'hrs';
+                return 'horas';
             case 2:
                 return 'min';
             case 3:
