@@ -7,7 +7,8 @@
 
     export let company, border = false, direction = 'left';
 
-    function showGifts(url) {
+    function showGifts(url, name) {
+        gtag('event', 'page_view', { 'page_location': url, 'title': name });
         window.open(url, '_blank');
     }
 </script>
@@ -28,7 +29,7 @@
         </div>
         <div slot="actions">
             <div class="actions">
-                <button type="button" class="button mx-auto" on:click={showGifts(company.url)}>
+                <button type="button" class="button mx-auto" on:click={showGifts(company.url, company.name)}>
                     <span>{ company.btnText }</span>
                     <Fa icon={company.isOnline ? faGift : faStore} />
                 </button>

@@ -8,7 +8,8 @@
 
     export let title, name, address, time, url, image, icon, direction = 'left';
 
-    function goToDirection(url) {
+    function goToDirection(url, name) {
+        gtag('event', 'page_view', { 'page_location': url, 'title': name });
         window.open(url, '_blank')
     }
 </script>
@@ -36,7 +37,7 @@
         <!-- Actions -->
         <div slot="actions">
             <div class="actions">
-                <button type="button" class="button" on:click={goToDirection(url)}>
+                <button type="button" class="button" on:click={goToDirection(url, name)}>
                     <span>Cómo llegar</span>
                     <Fa icon={faMapPin} />
                 </button>

@@ -39,6 +39,7 @@
 
         // Convert filtert text
         filterText = filterText.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+        gtag('event', 'search', { 'search_term': filterText });
 
         // Filter items
         const items = list.filter(item => {
