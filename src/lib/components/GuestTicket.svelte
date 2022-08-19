@@ -18,7 +18,8 @@
     }
 
     function confirm(phone, msg) {
-        msg = encodeURIComponent(msg.replace('__tickets__', guest.tickets == 1 ? '1 pase' : `${guest.tickets} pases`));
+        msg = msg.replace('__name__', guest.name);
+        msg = encodeURIComponent(msg.replace('__tickets__', `${guest.tickets} pase${guest.tickets > 1 ? 's' : ''}`));
         window.open(`https://wa.me/521${phone}/?text=${msg}`);
     }
 </script>
