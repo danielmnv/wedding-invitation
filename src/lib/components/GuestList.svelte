@@ -24,6 +24,8 @@
 
     // Set data of guest
     function setGuest(event) {
+        gtag('event', 'view_search_results', { 'items': [event.detail] });
+
         showList = false;
         guest = event.detail;
         window.history.replaceState({}, '', `/?guest=${encodeURIComponent(guest.name)}`);
