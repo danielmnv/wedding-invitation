@@ -10,7 +10,9 @@
     import { key } from '../services';
     const { _eventService } = getContext(key);
 
-    let countDate, isStarting = false, time = {
+    export let isStarting = false;
+
+    let countDate, countInterval, time = {
         days: 0,
         hours: 0,
         minutes: 0,
@@ -37,7 +39,10 @@
             const now = new Date().getTime();
             const gap = countDate - now;
 
-            if (!isStarting && gap == 0) isStarting = true;
+            if (gap <= 0 && (!isStarting || countInterval))  {
+                isStarting = true
+                clearInterval(countInterval)
+            }
 
             const second = 1000;
             const minute = second * 60;
@@ -51,7 +56,7 @@
         };
 
         countdown();
-        setInterval(() => countdown(), 1000);
+        countInterval = setInterval(() => countdown(), 1000);
 	});
 </script>
 
@@ -78,9 +83,14 @@
 
                 {:else}
                 <div class="w-full text-center">
-                    <!-- TODO: add text and fireworks/animation -->
-                    <p class="pb-1 handwriting font-extrabold text-3xl md:text-5xl md:font-semibold">{event.headline.countdown.start}</p>
-                    <p class="tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">{event.headline.countdown.start}</p>
+                    <!-- Begin text -->
+                    <Saos 
+                        animation={"fade-in 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"}
+                        once={true}
+                    >
+                        <p class="pb-1 font-extrabold text-3xl md:text-5xl md:font-semibold">{event.headline.countdown.start.title}</p>
+                        <p class="tracking-widest font-extrabold text-xs md:text-sm md:font-semibold">{event.headline.countdown.start.text}</p>
+                    </Saos>
                 </div>
                 {/if}
             </div>

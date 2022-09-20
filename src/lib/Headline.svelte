@@ -3,6 +3,7 @@
     import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
     // Components
+    import Celebration from '$lib/components/Celebration.svelte';
     import Slider from '$lib/components/Slider.svelte';
     import Title from '$lib/components/Title.svelte';
     import Text from '$lib/components/Text.svelte';
@@ -13,10 +14,15 @@
     import { key } from '../services';
     const { _eventService } = getContext(key);
 
-    export let slides;
+    export let slides, isStarting;
 </script>
 <section class="section py-0">
     {#await _eventService then event}
+    <!-- Fireworks -->
+    {#if isStarting}
+    <Celebration />
+    {/if}
+
     <!-- Names -->
 	<section class="section">
         <Deco 

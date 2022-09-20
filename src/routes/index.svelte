@@ -25,7 +25,7 @@
 		_eventService: Event
 	});
 
-	let loading = true, slides;
+	let loading = true, slides, isStarting = false;
 
 	onMount(() => {
 		/**
@@ -58,9 +58,9 @@
 	{#if loading}
 		<Loader />
 	{:else}
-	<Headline {slides} />
+	<Headline {slides} {isStarting} />
 
-	<Countdown />
+	<Countdown bind:isStarting />
 
 	<People />
 
